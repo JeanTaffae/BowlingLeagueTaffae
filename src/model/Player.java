@@ -24,8 +24,7 @@ private String phoneNumber;
 private String screenName;
 	@Column(name = "teamId")
 	
-	
-private int teamId;
+	private int teamId;
 	
 	public Player() {
 		super();

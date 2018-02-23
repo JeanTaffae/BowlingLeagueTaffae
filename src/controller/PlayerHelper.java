@@ -5,7 +5,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 
-
 import model.Team;
 
 public class PlayerHelper {
