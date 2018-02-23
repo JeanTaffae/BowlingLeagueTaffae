@@ -23,6 +23,8 @@ private String phoneNumber;
 	@Column(name = "screenName")
 private String screenName;
 	@Column(name = "teamId")
+	
+	
 private int teamId;
 	
 	public Player() {
