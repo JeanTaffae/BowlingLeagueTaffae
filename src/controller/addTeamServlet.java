@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Team;
 
 /**
- * Servlet implementation class addTeamServlet
+ * Servlet implementation class addTeamServlet 
  */
 @WebServlet("/addTeamServlet")
 public class addTeamServlet extends HttpServlet {
