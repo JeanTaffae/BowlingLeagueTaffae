@@ -1,5 +1,4 @@
 package controller;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,9 +27,9 @@ public class ViewAllPlayerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PlayerHelper dao = new PlayerHelper();
-		request.setAttribute("allItems", dao.showAllItems());
+		request.setAttribute("allItems", dao.viewAllPlayers());
 		
-		getServletContext().getRequestDispatcher("/viewAllPlayer.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllPlayers.jsp").forward(request, response);
 	}
 
 	/**
