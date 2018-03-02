@@ -22,16 +22,18 @@ public class PlayerHelper {
 		em.close();
 
 	}
+
 	public List<Player> viewAllPlayers() {
+
+
+
 		EntityManager em = emfactory.createEntityManager();
 		TypedQuery<Player> allResults = em.createQuery("select li from Player li", Player.class);
 		List<Player> allItems = allResults.getResultList();
 		em.close();
 		return allItems;
 	}
-	public Player searchForItemById(Integer tempId) {
-		return null;
-	} 
+ 
 	public void deleteItem(Player itemToDelete) {
 		 	
 	}
