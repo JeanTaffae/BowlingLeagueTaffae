@@ -1,8 +1,11 @@
 package controller;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import model.Player;
 
@@ -18,5 +21,13 @@ public class PlayerHelper {
 		em.getTransaction().commit();
 		em.close();
 
+	}
+
+	public Object showAllItems() {
+		EntityManager em = emfactory.createEntityManager();
+		TypedQuery<Player> allResults = em.createQuery("select li from Player li", Player.class);
+		List<Player> allItems = allResults.getResultList();
+		em.close();
+		return allItems;
 	}
 }
