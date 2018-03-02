@@ -68,7 +68,7 @@ private String screenName;
 		this.screenName = screenName;
 	}
 	public int getTeamId() {
-		return teamId;
+		return teamId; 
 	}
 	public void setTeamId(int teamId) {
 		this.teamId = teamId;

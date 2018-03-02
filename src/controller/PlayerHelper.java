@@ -9,11 +9,11 @@ import javax.persistence.TypedQuery;
 
 import model.Player;
 
+
 public class PlayerHelper {
 	EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("BowlingLeagueTaffae");
 
 	public void insertPlayer(Player toAdd) {
-		// TODO Auto-generated method stub
 
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
@@ -23,11 +23,18 @@ public class PlayerHelper {
 
 	}
 
-	public Object showAllItems() {
+	public List<Player> viewAllPlayers() {
+
+
+
 		EntityManager em = emfactory.createEntityManager();
 		TypedQuery<Player> allResults = em.createQuery("select li from Player li", Player.class);
 		List<Player> allItems = allResults.getResultList();
 		em.close();
 		return allItems;
+	}
+ 
+	public void deleteItem(Player itemToDelete) {
+		 	
 	}
 }
