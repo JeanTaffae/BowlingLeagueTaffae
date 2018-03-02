@@ -14,7 +14,7 @@ public class PlayerHelper {
 	EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("BowlingLeagueTaffae");
 
 	public void insertPlayer(Player toAdd) {
-		
+
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(toAdd);
