@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ViewAllPlayerServlet
  */
-@WebServlet("/ViewAllPlayerServlet")
-public class ViewAllPlayerServlet extends HttpServlet {
+@WebServlet("/ViewAllPlayersServlet")
+public class ViewAllPlayersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewAllPlayerServlet() {
+    public ViewAllPlayersServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,6 +28,10 @@ public class ViewAllPlayerServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		PlayerHelper dao = new PlayerHelper();
 		request.setAttribute("allItems", dao.viewAllPlayers());
+		
+		if (dao.viewAllPlayers().isEmpty()) {
+			request.setAttribute("allItems"," ");
+		}
 		
 		getServletContext().getRequestDispatcher("/viewAllPlayers.jsp").forward(request, response);
 	}

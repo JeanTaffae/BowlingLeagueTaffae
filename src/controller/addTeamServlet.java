@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Team;
 
 /**
- * Servlet implementation class addTeamServlet 
+ * Servlet implementation class addTeam
  */
 @WebServlet("/addTeamServlet")
 public class addTeamServlet extends HttpServlet {
@@ -24,6 +24,8 @@ public class addTeamServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -33,11 +35,12 @@ public class addTeamServlet extends HttpServlet {
 		String teamType = request.getParameter("teamType");
 		String preferredNight = request.getParameter("preferredNight");
 		
-		Team nt = new Team(teamName, teamType, preferredNight);
-		TeamHelper dao = new TeamHelper();
-		dao.insertTeam(nt);
 		
-		getServletContext().getRequestDispatcher("/AddTeam.html").forward(request, response);
+		Team nt = new Team(teamName, teamType, preferredNight);
+		TeamHelper th = new TeamHelper();
+		th.addTeam(nt);
+		
+		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}
 
 }

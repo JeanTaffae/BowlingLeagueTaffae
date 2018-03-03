@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Player;
-import model.Team;
 
 /**
  * Servlet implementation class addPlayerServlet
@@ -38,7 +37,7 @@ public class addPlayerServlet extends HttpServlet {
 		
 		Player np = new Player(firstName, lastName, phoneNumber, screenName, teamId);
 		PlayerHelper ph = new PlayerHelper();
-		ph.insertPlayer(np);
+		ph.addPlayer(np);
 		
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}
